@@ -1,0 +1,6 @@
+{
+  "name": "Optimization Boost - Landing & Privacy",
+  "description": "Site oficial e termos de privacidade para o aplicativo Optimization Boost na Play Store.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
