@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: './',
+    base: '/optimization_site/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
