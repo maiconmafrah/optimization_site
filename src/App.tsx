@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   ShieldCheck, Smartphone, HelpCircle, FileText, 
@@ -15,9 +15,41 @@ import TermsOfServiceView from './components/TermsOfServiceView';
 
 export default function App() {
   const [lang, setLang] = useState<Language>('pt');
-  const [activeView, setActiveView] = useState<'inicio' | 'privacidade' | 'termos'>('inicio');
+  
+  // Try to determine initial view from hash
+  const initialHash = typeof window !== 'undefined' ? window.location.hash.replace('#', '') : '';
+  const initialView = ['inicio', 'privacidade', 'termos'].includes(initialHash) 
+    ? initialHash as 'inicio' | 'privacidade' | 'termos' 
+    : 'inicio';
+
+  const [activeView, setActiveView] = useState<'inicio' | 'privacidade' | 'termos'>(initialView);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [toasts, setToasts] = useState<{ id: string; message: string }[]>([]);
+
+  // Update hash when activeView changes to support direct links
+  useEffect(() => {
+    if (activeView !== 'inicio') {
+      window.location.hash = activeView;
+    } else {
+      // Clean up hash if it's the home view
+      window.history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  }, [activeView]);
+
+  // Listen for hash changes to sync view (e.g. back button or manual hash change)
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (['inicio', 'privacidade', 'termos'].includes(hash)) {
+        setActiveView(hash as 'inicio' | 'privacidade' | 'termos');
+      } else if (!hash) {
+        setActiveView('inicio');
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   // Action helper to show beautiful notifications
   const triggerNotification = (message: string) => {
