@@ -21,15 +21,7 @@ export const PRIVACY_POLICY: Record<Language, { title: string; subtitle: string;
         ]
       },
       {
-        title: '2. Uso do Serviço de VPN (VpnService)',
-        elements: [
-          'O recurso "Ping Booster" utiliza a API nativa VpnService do sistema Android para estabelecer uma conexão de rede local e configurar os servidores DNS públicos da Cloudflare (1.1.1.1 e 1.0.0.1).',
-          '• Sem Intercepção de Tráfego: O serviço cria apenas um redirecionamento local para consultas DNS. O tráfego de dados e navegação em geral do usuário não passa por servidores externos nossos e não é interceptado, descriptografado ou modificado.',
-          '• Privacidade Absoluta da Conexão: Não coletamos, monitoramos, armazenamos ou compartilhamos histórico de navegação, endereços IP externos ou dados transmitidos durante o uso deste recurso.'
-        ]
-      },
-      {
-        title: '3. Serviços de Terceiros e Anúncios (Google AdMob)',
+        title: '2. Serviços de Terceiros e Anúncios (Google AdMob)',
         elements: [
           'Para fins de monetização e liberação de recursos adicionais, o Aplicativo integra o SDK do Google Mobile Ads (AdMob).',
           '• Identificadores Coletados: O SDK da Google pode ler o Identificador de Publicidade do Google (AD_ID), dados de rede (como IP) e telemetria de funcionamento para exibir anúncios (inclusive anúncios premiados).',
@@ -37,22 +29,22 @@ export const PRIVACY_POLICY: Record<Language, { title: string; subtitle: string;
         ]
       },
       {
-        title: '4. Compartilhamento e Transferência de Dados',
+        title: '3. Compartilhamento e Transferência de Dados',
         elements: [
-          'O desenvolvedor não vende, não aluga e não compartilha dados pessoais ou de telemetria local dos usuários com terceiros. A transferência de metadados operacionais ocorre unicamente para o Google Mobile Ads, conforme descrito no item 3.'
+          'O desenvolvedor não vende, não aluga e não compartilha dados pessoais ou de telemetria local dos usuários com terceiros. A transferência de metadados operacionais ocorre unicamente para o Google Mobile Ads, conforme descrito no item 2.'
         ]
       },
       {
-        title: '5. Direitos do Usuário (LGPD / GDPR)',
+        title: '4. Direitos do Usuário (LGPD / GDPR)',
         elements: [
           'Garantimos ao usuário o controle total sobre seus dados locais:',
           '• Exclusão de Gravações: Você pode apagar suas gravações de tela a qualquer momento na galeria de mídia do app ou pelo gerenciador de arquivos do celular.',
-          '• Revogação de Permissões: Você pode revogar as permissões de gravação de áudio, monitoramento de aplicativos ou acesso à VPN nas configurações do sistema Android.',
+          '• Revogação de Permissões: Você pode revogar as permissões de gravação de áudio ou monitoramento de aplicativos nas configurações do sistema Android.',
           '• Suporte: Para dúvidas ou para solicitar a exclusão de qualquer e-mail enviado ao suporte, entre em contato via maiconmafra04@gmail.com.'
         ]
       },
       {
-        title: '6. Privacidade Infantil',
+        title: '5. Privacidade Infantil',
         elements: [
           'O Aplicativo não coleta intencionalmente dados de identificação de crianças menores de 13 anos e está em total conformidade com as diretrizes da Google Play e a legislação de proteção infantil aplicável.'
         ]
